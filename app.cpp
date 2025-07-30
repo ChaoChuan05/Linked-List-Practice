@@ -46,7 +46,20 @@ int main() {
 
 				ReadFile(user_file_name, &student_list);
 
-				cout << student_list.size() << "record have been successfully read";
+				cout << student_list.size() << " record have been successfully read" << endl;
+				cout << endl;
+
+				//For debug purpose only
+				/*Node* current = student_list.head;
+
+				while (current != nullptr) {
+					cout << "Name: " << current->item.name << endl;
+					cout << "ID: " << current->item.id << endl;
+					cout << "Course: " << current->item.course << endl;
+					cout << "Phone: " << current->item.phone_no << endl;
+
+					current = current->next;
+				}*/
 
 				cout << "Do you still want continue to read file (Y - yes, N - no): ";
 				cin >> continue_case_1;
@@ -67,12 +80,24 @@ int main() {
 				cin.ignore();
 
 				if (DeleteRecord(&student_list, student_id)) {
-					cout << student_id << " record have been deleted successfully" << endl;
+					cout << "Student with ID:" << student_id << " have been deleted successfully" << endl;
 				}
 
 				else {
 					cout << student_id << " record is not found" << endl;
 				}
+
+				//For debug purpose only
+				/*Node* current = student_list.head;
+
+				while (current != nullptr) {
+					cout << "Name: " << current->item.name << endl;
+					cout << "ID: " << current->item.id << endl;
+					cout << "Course: " << current->item.course << endl;
+					cout << "Phone: " << current->item.phone_no << endl;
+
+					current = current->next;
+				}*/
 
 				cout << "Do you still want continue to delete record (Y - yes, N - no): ";
 				cin >> continue_case_2;
@@ -181,9 +206,19 @@ bool ReadFile(string filename, List* list) {
 	string line, id_line, name_line, course_line, phone_line;
 
 	while (getline(inFile, id_line)) {
-		if (!getline(inFile, name_line)) break;
-		if (!getline(inFile, course_line)) break;
-		if (!getline(inFile, phone_line)) break;
+
+		if (!getline(inFile, name_line) ||
+			!getline(inFile, course_line) ||
+			!getline(inFile, phone_line)
+			) {
+			cout << "Skip due to invalid getline" << endl;
+			continue;
+		}
+
+		//To eat out the empty line between student
+		getline(inFile, line);
+		getline(inFile, line);
+
 
 		/*
 		you might confuse about the line below...
@@ -212,33 +247,27 @@ bool ReadFile(string filename, List* list) {
 		In this case, we just want to validate to make sure that the code is not broke
 		*/
 
+		// Find values after '='
+		size_t pos;
 		string id, name, course, phone;
-		size_t position;
 
-		position = id_line.find("=");
-		if (position != string::npos) id = id_line.substr(position + 1); //We want the value after "= "
+		pos = id_line.find("=");
+		if (pos == string::npos) continue;
+		id = id_line.substr(pos + 1);
 
-		position = name_line.find("=");
-		if (position != string::npos) name = name_line.substr(position + 1);
+		pos = name_line.find("=");
+		if (pos == string::npos) continue;
+		name = name_line.substr(pos + 1);
 
-		position = course_line.find("=");
-		if (position != string::npos) course = course_line.substr(position + 1);
+		pos = course_line.find("=");
+		if (pos == string::npos) continue;
+		course = course_line.substr(pos + 1);
 
-		position = phone_line.find("=");
-		if (position != string::npos) phone = phone_line.substr(position + 1);
-			
+		pos = phone_line.find("=");
+		if (pos == string::npos) continue;
+		phone = phone_line.substr(pos + 1);
 
-		/*
-			name_line make it "Name = Matt Damon"
-			The position of equal sign is 4
-			After using substr(position + 1)
-
-			" Matt Damon" it became like this
-
-			So the line below is to remove the empty space
-
-		*/
-
+		// Trim leading spaces
 		id = id.substr(id.find_first_not_of(" "));
 		name = name.substr(name.find_first_not_of(" "));
 		course = course.substr(course.find_first_not_of(" "));
@@ -247,6 +276,7 @@ bool ReadFile(string filename, List* list) {
 		bool is_duplicate = false;
 
 		type temporary;
+
 
 		//Checking duplication
 		for (int i = 1; i <= list->size(); i++) {
@@ -278,9 +308,7 @@ bool ReadFile(string filename, List* list) {
 
 			list->insert(student_information);
 		}
-		
-		//To eat out the empty line between student
-		getline(inFile, line);
+
 	}
 
 	inFile.close();
@@ -295,9 +323,10 @@ bool DeleteRecord(List* list, char* id) {
 
 	for (int i = 1; i <= list->size(); i++) {
 		if (list->get(i, temporary)) { //retrieve student information at position i & store in temporary
-			if (strcmp(temporary.id, id) == 0) //if the student id is same mean equal to 0, then we remove it
+			if (strcmp(temporary.id, id) == 0) { //if the student id is same mean equal to 0, then we remove it
 				list->remove(i);
 				return true;
+			}
 		}
 
 	}
@@ -428,13 +457,14 @@ bool InsertBook(string filename, List* list) {
 
 
 		//This is to cut out the author since  eg:  Alex/Ali contain two author
-		char* token = strtok(book_author, "/");
+		char* context = nullptr;
+		char* token = strtok_s(book_author, "/", &context);
 
 		while (token != nullptr && count < 10) { //can't exceeds 10 author
 			book.author[count] = new char[strlen(token) + 1]; //Dynamic allocate memory to store the author name +1 is for null terminator
 			strcpy_s(book.author[count], sizeof(book_author[count]), token); 
 			count++;
-			token = strtok(nullptr, "/"); //continue to find the / 
+			token = strtok_s(nullptr, "/", &context); //continue to find the / 
 		}
 
 		//Calculate fine
