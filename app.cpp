@@ -63,6 +63,16 @@ int main() {
 
 				cout << "Do you still want continue to read file (Y - yes, N - no): ";
 				cin >> continue_case_1;
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');  // <-- THIS CLEARS THE BUFFER
+
+				while (continue_case_1 != 'Y' && continue_case_1 != 'y' && continue_case_1 != 'n' && continue_case_1 != 'N') {
+					cout << endl;
+					cout << "Invalid selection, please try again" << endl;
+					cout << "Do you still want continue to read file (Y - yes, N - no): ";
+					cin >> continue_case_1;
+					cin.ignore(numeric_limits<streamsize>::max(), '\n');  // <-- THIS CLEARS THE BUFFER
+				}
+
 
 			} while (continue_case_1 == 'Y' || continue_case_1 == 'y');
 
@@ -101,10 +111,47 @@ int main() {
 
 				cout << "Do you still want continue to delete record (Y - yes, N - no): ";
 				cin >> continue_case_2;
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');  // <-- THIS CLEARS THE BUFFER
+
+				while (continue_case_2 != 'Y' && continue_case_2 != 'y' && continue_case_2 != 'n' && continue_case_2 != 'N') {
+					cout << endl;
+					cout << "Invalid selection, please try again" << endl;
+					cout << "Do you still want continue to read file (Y - yes, N - no): ";
+					cin >> continue_case_2;
+					cin.ignore(numeric_limits<streamsize>::max(), '\n');  // <-- THIS CLEARS THE BUFFER
+				}
 
 
 			} while (continue_case_2 == 'Y' || continue_case_2 == 'y');
 			
+			break;
+		}
+
+		case 3: {
+			char continue_case_3;
+
+			do {
+
+				//Put your code here
+
+
+
+				//DO NOT DELETE THE WHOLE THING
+				cout << "Do you still want continue to delete record (Y - yes, N - no): ";
+				cin >> continue_case_3;
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');  // <-- THIS CLEARS THE BUFFER
+
+				while (continue_case_3 != 'Y' && continue_case_3 != 'y' && continue_case_3 != 'n' && continue_case_3 != 'N') {
+					cout << endl;
+					cout << "Invalid selection, please try again" << endl;
+					cout << "Do you still want continue to read file (Y - yes, N - no): ";
+					cin >> continue_case_3;
+					cin.ignore(numeric_limits<streamsize>::max(), '\n');  // <-- THIS CLEARS THE BUFFER
+				}
+
+
+			} while (continue_case_3 == 'Y' || continue_case_3 == 'y');
+
 			break;
 		}
 
@@ -122,6 +169,15 @@ int main() {
 
 				cout << "Do you still want continue to read file (Y - yes, N - no): ";
 				cin >> continue_case_4;
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');  // <-- THIS CLEARS THE BUFFER
+
+				while (continue_case_4 != 'Y' && continue_case_4 != 'y' && continue_case_4 != 'n' && continue_case_4 != 'N') {
+					cout << endl;
+					cout << "Invalid selection, please try again" << endl;
+					cout << "Do you still want continue to read file (Y - yes, N - no): ";
+					cin >> continue_case_4;
+					cin.ignore(numeric_limits<streamsize>::max(), '\n');  // <-- THIS CLEARS THE BUFFER
+				}
 
 			} while (continue_case_4 == 'Y' || continue_case_4 == 'y');
 
@@ -146,7 +202,15 @@ int main() {
 
 				cout << "Do you still want continue to delete record (Y - yes, N - no): ";
 				cin >> continue_case_5;
-				cin.ignore();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');  // <-- THIS CLEARS THE BUFFER
+
+				while (continue_case_5 != 'Y' && continue_case_5 != 'y' && continue_case_5 != 'n' && continue_case_5 != 'N') {
+					cout << endl;
+					cout << "Invalid selection, please try again" << endl;
+					cout << "Do you still want continue to read file (Y - yes, N - no): ";
+					cin >> continue_case_5;
+					cin.ignore(numeric_limits<streamsize>::max(), '\n');  // <-- THIS CLEARS THE BUFFER
+				}
 
 
 			} while (continue_case_5 == 'y' || continue_case_5 == 'Y');
@@ -154,6 +218,93 @@ int main() {
 			break;
 		}
 		
+		case 6: {
+
+			char continue_case_6;
+
+			do {
+
+				//Put your code here
+
+
+
+				//DO NOT DELETE THE WHOLE THING
+				cout << "Do you still want continue to delete record (Y - yes, N - no): ";
+				cin >> continue_case_6;
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');  // <-- THIS CLEARS THE BUFFER
+
+				while (continue_case_6 != 'Y' && continue_case_6 != 'y' && continue_case_6 != 'n' && continue_case_6 != 'N') {
+					cout << endl;
+					cout << "Invalid selection, please try again" << endl;
+					cout << "Do you still want continue to read file (Y - yes, N - no): ";
+					cin >> continue_case_6;
+					cin.ignore(numeric_limits<streamsize>::max(), '\n');  // <-- THIS CLEARS THE BUFFER
+				}
+
+
+			} while (continue_case_6 == 'Y' || continue_case_6 == 'y');
+
+			break;
+		}
+		
+		case 7: {
+			char continue_case_7;
+
+			do {
+
+				//Put your code here
+
+
+
+				//DO NOT DELETE THE WHOLE THING
+				cout << "Do you still want continue to delete record (Y - yes, N - no): ";
+				cin >> continue_case_7;
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');  // <-- THIS CLEARS THE BUFFER
+
+				while (continue_case_7 != 'Y' && continue_case_7 != 'y' && continue_case_7 != 'n' && continue_case_7 != 'N') {
+					cout << endl;
+					cout << "Invalid selection, please try again" << endl;
+					cout << "Do you still want continue to read file (Y - yes, N - no): ";
+					cin >> continue_case_7;
+					cin.ignore(numeric_limits<streamsize>::max(), '\n');  // <-- THIS CLEARS THE BUFFER
+				}
+
+
+			} while (continue_case_7 == 'Y' || continue_case_7 == 'y');
+
+			break;
+
+		}
+
+		case 8: {
+			char continue_case_8;
+
+			do {
+
+				//Put your code here
+
+
+
+				//DO NOT DELETE THE WHOLE THING
+				cout << "Do you still want continue to delete record (Y - yes, N - no): ";
+				cin >> continue_case_8;
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');  // <-- THIS CLEARS THE BUFFER
+
+				while (continue_case_8 != 'Y' && continue_case_8 != 'y' && continue_case_8 != 'n' && continue_case_8 != 'N') {
+					cout << endl;
+					cout << "Invalid selection, please try again" << endl;
+					cout << "Do you still want continue to read file (Y - yes, N - no): ";
+					cin >> continue_case_8;
+					cin.ignore(numeric_limits<streamsize>::max(), '\n');  // <-- THIS CLEARS THE BUFFER
+				}
+
+
+			} while (continue_case_8 == 'Y' || continue_case_8 == 'y');
+
+			break;
+
+		}
+
 		case 9: {
 			cout << "Good Bye!!!" << endl;
 			system("pause");
@@ -169,6 +320,9 @@ int main() {
 
 		cout << "Do you still want to continue to menu (Y - yes, N - no): ";
 		cin >> user_continue_input;
+		cin.ignore();
+		cout << endl;
+		system("cls");
 
 
 	} while (user_continue_input == 'y' || user_continue_input == 'Y');
@@ -380,7 +534,7 @@ bool Display(List*list, int source, int detail) {
 	Node* current = list->head;
 	int count = 1;
 
-	while (current != NULL) {
+	while (current != nullptr) {
 		*out << "Student" << count++ << endl;
 
 		//print book & student
@@ -394,13 +548,18 @@ bool Display(List*list, int source, int detail) {
 			*out << "Course: " << current->item.course << endl;
 			*out << "Phone No: " << current->item.phone_no << endl;
 			*out << "Total Fine: RM" << current->item.total_fine << endl;
+			*out << endl;
 		}
 
 		*out << string(20, '*');
+		*out << endl << endl;
 		current = current->next; //next node address value
 	
 	}
 
+	if (source == 1) OutFile.close();
+
+	cout << endl;
 	cout << "Successfully display output" << endl;
 
 	return true;
@@ -409,7 +568,7 @@ bool Display(List*list, int source, int detail) {
 
 bool InsertBook(string filename, List* list) {
 	ifstream inFile;
-	
+
 	inFile.open(filename);
 
 	if (!inFile) {
@@ -418,23 +577,99 @@ bool InsertBook(string filename, List* list) {
 	}
 
 	char student_id[10];
-	char book_author[100];
 	char book_title[250];
-	char book_publisher[30];
-	char book_ISBN[11];
+	char book_publisher[100];
+	char book_ISBN[15];
 	int book_year;
-	char call_num[20];
+	char call_num[30];
 	int borrow_day, borrow_month, borrow_year;
 	int due_day, due_month, due_year;
 
-	
-	while (
-		inFile >> student_id >> book_author >>
-		book_title >> book_publisher >> book_ISBN >>
-		book_year >> call_num >> borrow_day >> borrow_month >>
-		borrow_year >> due_day >> due_month >> due_year
-		) {
+	while (!inFile.eof()) {
+
+		//Take input respectively
+		inFile >> ws >> student_id;
+		inFile.ignore();
+
+		char author_buffer[250];
+		inFile >> author_buffer;
+
+		//Debug only
+		//cout << "Author buffer: [" << author_buffer << "]" << endl;
+
+		//Divide the author eg: alex/ali in author buffer to alex in authors[1] ali to authors[2]
+		char* authors[10] = { nullptr };
+		int count = 0;
+		char* next_pointer = nullptr;
+
+		char* token = strtok_s(author_buffer, "/", &next_pointer);
+
+		while (token != nullptr && count < 10) {
+			size_t length = strlen(token);
+			authors[count] = new char[length + 1];
+			strcpy_s(authors[count], length + 1, token);
+			count++;
+			token = strtok_s(nullptr, "/", &next_pointer);
+		}
+
+		inFile.ignore();
+		inFile.getline(book_title, 250, ' ');
+		inFile.getline(book_publisher, 100, ' ');
+		inFile >> book_ISBN;
+		inFile.ignore();
 			
+		if (!inFile) {
+			cout << "Error reading title, publisher, ISBN" << endl;
+			break;
+		}
+
+		inFile >> book_year;
+		inFile.ignore();
+
+		inFile.getline(call_num, 30, ' ');
+
+		char borrow_date_buffer[20];
+
+		inFile.getline(borrow_date_buffer, 20, ' ');
+
+		if (sscanf_s(borrow_date_buffer, "%d/%d/%d", &borrow_day, &borrow_month, &borrow_year) != 3) {
+			cout << "Error: The borrow date data is failing" << endl;
+			break;
+		}
+
+		char due_date_buffer[20];
+
+		inFile.getline(due_date_buffer, 20, '\n');
+
+		if (sscanf_s(due_date_buffer, "%d/%d/%d", &due_day, &due_month, &due_year) != 3) {
+			cout << "Error: The due date data is failing" << endl;
+			break;
+		}
+
+		inFile.ignore();
+		
+		//Debug only
+		//cout << student_id << endl;
+
+		//for (int i = 0; i < count; ++i) {
+		//	cout << "Author[" << i << "]: " << authors[i] << endl;
+		//}
+
+		//cout << book_title << endl;
+		//cout << book_publisher << endl;
+		//cout << book_ISBN << endl;
+		//cout << book_year << endl;
+		//cout << call_num << endl;
+		//cout << borrow_day << endl;
+		//cout << borrow_month << endl;
+		//cout << borrow_year << endl;
+		//cout << due_day << endl;
+		//cout << due_month << endl;
+		//cout << due_year << endl;
+		//cout << endl;
+		
+
+		//Insert data
 		LibBook book;
 
 		strcpy_s(book.title, sizeof(book.title), book_title);
@@ -442,8 +677,12 @@ bool InsertBook(string filename, List* list) {
 		strcpy_s(book.ISBN, sizeof(book.ISBN), book_ISBN);
 		strcpy_s(book.callNum, sizeof(book.callNum), call_num);
 
-		book.yearPublished = book_year;
+		for (int i = 0; i < count; ++i) {
+			book.author[i] = new char[strlen(authors[i]) + 1];
+			strcpy_s(book.author[i], strlen(authors[i]) + 1, authors[i]);
+		}
 
+		book.yearPublished = book_year;
 		book.borrow.day = borrow_day;
 		book.borrow.month = borrow_month;
 		book.borrow.year = borrow_year;
@@ -451,21 +690,6 @@ bool InsertBook(string filename, List* list) {
 		book.due.day = due_day;
 		book.due.month = due_month;
 		book.due.year = due_year;
-		
-		//split author / 
-		int count = 0;
-
-
-		//This is to cut out the author since  eg:  Alex/Ali contain two author
-		char* context = nullptr;
-		char* token = strtok_s(book_author, "/", &context);
-
-		while (token != nullptr && count < 10) { //can't exceeds 10 author
-			book.author[count] = new char[strlen(token) + 1]; //Dynamic allocate memory to store the author name +1 is for null terminator
-			strcpy_s(book.author[count], sizeof(book_author[count]), token); 
-			count++;
-			token = strtok_s(nullptr, "/", &context); //continue to find the / 
-		}
 
 		//Calculate fine
 		const double FINE = 0.50;
@@ -475,41 +699,67 @@ bool InsertBook(string filename, List* list) {
 		current_date.month = 3;
 		current_date.year = 2020;
 
-		bool julian_date_current = current_date.day + 
-								   current_date.month * 30 + 
-								   current_date.year * 365;
-
-		bool julian_date_due = due_day +
-							   due_month * 30 +
-							   due_year * 365;
+		int julian_date_current = current_date.day + current_date.month * 30 + current_date.year * 365;
+		int julian_date_due = due_day + due_month * 30 + due_year * 365;
 
 		int overdue = julian_date_current - julian_date_due;
-	
+
 		book.fine = overdue > 0 ? overdue * FINE : 0.0;
+
+		//Debug only
+
+		/*for (int i = 0; i < count; ++i) {
+			cout << "Author[" << i << "]: " << book.author[i] << endl;
+		}
+
+		cout << book.title << endl;
+		cout << book.publisher << endl;
+		cout << book.ISBN << endl;
+		cout << book.callNum << endl;
+		cout << book.yearPublished << endl;
+		cout << book.borrow.day << "/" << book.borrow.month << "/" << book.borrow.year << endl;
+		cout << book.due.day << "/" << book.due.month << "/" << book.due.year << endl;
+		cout << book.fine << endl;*/
 
 		//Search student ID
 		Node* current = list->head;
 
+		if (list->empty()) cout << "The list is empty" << endl;
+
 		while (current != nullptr) {
 			if (strcmp(current->item.id, student_id) == 0) {
+
+				cout << endl;
+				cout << "Match found: inserting book for the student with ID: " << student_id << endl;
+				cout << "Current total book: " << current->item.totalbook << endl;
+				cout << endl;
+
 				if (current->item.totalbook < 15) { //student can only borrow up to 15 book
 
 					//eg current->item.book[2] - if total book is 2
 					current->item.book[current->item.totalbook] = book; //insert book into next avaliable spot in the student book 
 					current->item.totalbook++;
 
+					cout << "Book title: " << current->item.book[current->item.totalbook - 1].title << endl;
+					cout << "Current total book: " << current->item.totalbook << endl;
+
+
 					current->item.calculateTotalFine();
+
+					cout << "Current total fine: RM" << current->item.total_fine << endl;
+					cout << endl;
+
 				}
 				break;
 			}
 			current = current->next;
 		}
-
 	}
 
 	inFile.close();
 	return true;
 }
+
 
 
 //bool SearchStudent(List* list, char* id, LibStudent&stu) {
