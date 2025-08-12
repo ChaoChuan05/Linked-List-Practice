@@ -156,7 +156,7 @@ int main() {
 
 
 				//DO NOT DELETE THE WHOLE THING
-				cout << "Do you still want continue to delete record (Y - yes, N - no): ";
+				cout << "Do you still want continue to Search Student (Y - yes, N - no): ";
 				cin >> continue_case_3;
 				cin.ignore(numeric_limits<streamsize>::max(), '\n');  // <-- THIS CLEARS THE BUFFER
 
@@ -193,7 +193,7 @@ int main() {
 				while (continue_case_4 != 'Y' && continue_case_4 != 'y' && continue_case_4 != 'n' && continue_case_4 != 'N') {
 					cout << endl;
 					cout << "Invalid selection, please try again" << endl;
-					cout << "Do you still want continue to read file (Y - yes, N - no): ";
+					cout << "Do you still want continue to Insert Book (Y - yes, N - no): ";
 					cin >> continue_case_4;
 					cin.ignore(numeric_limits<streamsize>::max(), '\n');  // <-- THIS CLEARS THE BUFFER
 				}
@@ -226,7 +226,7 @@ int main() {
 				while (continue_case_5 != 'Y' && continue_case_5 != 'y' && continue_case_5 != 'n' && continue_case_5 != 'N') {
 					cout << endl;
 					cout << "Invalid selection, please try again" << endl;
-					cout << "Do you still want continue to read file (Y - yes, N - no): ";
+					cout << "Do you still want continue to Display (Y - yes, N - no): ";
 					cin >> continue_case_5;
 					cin.ignore(numeric_limits<streamsize>::max(), '\n');  // <-- THIS CLEARS THE BUFFER
 				}
@@ -256,7 +256,7 @@ int main() {
 				while (continue_case_6 != 'Y' && continue_case_6 != 'y' && continue_case_6 != 'n' && continue_case_6 != 'N') {
 					cout << endl;
 					cout << "Invalid selection, please try again" << endl;
-					cout << "Do you still want continue to read file (Y - yes, N - no): ";
+					cout << "Do you still want continue to compute & Display Statistics (Y - yes, N - no): ";
 					cin >> continue_case_6;
 					cin.ignore(numeric_limits<streamsize>::max(), '\n');  // <-- THIS CLEARS THE BUFFER
 				}
@@ -290,7 +290,7 @@ int main() {
 				while (continue_case_7 != 'Y' && continue_case_7 != 'y' && continue_case_7 != 'n' && continue_case_7 != 'N') {
 					cout << endl;
 					cout << "Invalid selection, please try again" << endl;
-					cout << "Do you still want continue to read file (Y - yes, N - no): ";
+					cout << "Do you still want continue to print student with same book (Y - yes, N - no): ";
 					cin >> continue_case_7;
 					cin.ignore(numeric_limits<streamsize>::max(), '\n');  // <-- THIS CLEARS THE BUFFER
 				}
@@ -322,7 +322,7 @@ int main() {
 				while (continue_case_8 != 'Y' && continue_case_8 != 'y' && continue_case_8 != 'n' && continue_case_8 != 'N') {
 					cout << endl;
 					cout << "Invalid selection, please try again" << endl;
-					cout << "Do you still want continue to read file (Y - yes, N - no): ";
+					cout << "Do you still want continue to display warned student (Y - yes, N - no): ";
 					cin >> continue_case_8;
 					cin.ignore(numeric_limits<streamsize>::max(), '\n');  // <-- THIS CLEARS THE BUFFER
 				}
@@ -491,6 +491,8 @@ bool ReadFile(string filename, List* list) {
 			strcpy_s(student_information.phone_no, sizeof(student_information.phone_no), phone.c_str());
 
 			list->insert(student_information);
+
+
 		}
 
 	}
